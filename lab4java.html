@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVEN ODD </title>
+</head>
+<body>
+    <script >
+        function calculateGPA() {
+    let totalGradePoints = 0;
+    let totalCreditHours = 0;
+  const numCourses = parseInt(prompt("enter number of courses"));  
+    for (let i = 0; i < numCourses; i++) {
+      const courseName = prompt(`Enter the name of course ${i + 1}:`);
+      const creditHours = parseFloat(prompt(`Enter the credit hours for ${courseName}:`));
+      const grade = prompt(`Enter the grade for ${courseName} (A, A-, B+, etc.):`);
+        let gradePoints;
+      if (grade === "A") {
+        gradePoints = 4.0;
+      } else if (grade === "A-") {
+        gradePoints = 3.7;
+      } else if (grade === "B+") {
+        gradePoints = 3.3;
+      } else if (grade === "B") {
+        gradePoints = 3.0;
+      } else if (grade === "B-") {
+        gradePoints = 2.7;
+      } else if (grade === "C+") {
+        gradePoints = 2.3;
+      } else if (grade === "C") {
+        gradePoints = 2.0;
+      } else if (grade === "C-") {
+        gradePoints = 1.7;
+      } else if (grade === "D+") {
+        gradePoints = 1.3;
+      } else if (grade === "D") {
+        gradePoints = 1.0;
+      } else if (grade === "F") {
+        gradePoints = 0.0;
+      } else {
+        alert("Invalid grade entered. Please enter a valid grade.");
+        i--;
+        continue;
+      }
+        totalGradePoints += gradePoints * creditHours;
+      totalCreditHours += creditHours;
+    }
+      const gpa = totalGradePoints / totalCreditHours;
+      alert(`Your GPA is: ${gpa.toFixed(2)}`);
+  }
+    calculateGPA();
+  
+    </script>
+</body>
+</html>
